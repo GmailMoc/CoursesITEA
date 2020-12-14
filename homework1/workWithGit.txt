@@ -1,0 +1,13 @@
+проверить какой сейчас редактор установлен (локально - для проекта):
+ git config --get --local core.editor
+
+проверить какой сейчас редактор установлен (глобально - для текущего юзера):
+ git config --get --global core.editor
+
+установить редактор локально:
+ git config --local core.editor "code --wait"
+
+установить редактор для текущего пользователя:
+ git config --global core.editor "'full path to the file'"
+или (для Visual Studio Code):
+ git config --global core.editor "code --wait"
