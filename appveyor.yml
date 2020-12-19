@@ -1,8 +1,0 @@
-version: 1.0.{build}
-configuration: Release
-cache: 
-    - packages -> **\packages.config
-before_build: nuget restore
-build: 
-    project: "~/homework2/WebApp_HW2_Empty/WebApp_HW2_Empty.csproj"
-    publish_wap: true
