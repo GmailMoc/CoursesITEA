@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebApp_MVC
+namespace WebApp_HW2_Empty
 {
     public class Program
     {
