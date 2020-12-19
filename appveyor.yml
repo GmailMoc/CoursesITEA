@@ -4,5 +4,5 @@ cache:
     - packages -> **\packages.config
 before_build: nuget restore
 build: 
-    project: homework2\WebApp_HW2_Empty\WebApp_HW2_Empty.csproj
+    project: WebApp_HW2_Empty.csproj
     publish_wap: true
