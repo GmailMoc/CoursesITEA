@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "News Page";
+}
+
+@section NewsTable 
+{
+<h3>News table</h3>
+<table border="1" , cellpadding="5">
+    <tr>
+        <th>№</th>
+        <th>Title</th>
+        <th>Text</th>
+        <th>Author</th>
+        <th>Is fake?</th>
+    </tr>
+    @foreach (News news in ViewBag.News)
+    {
+        <tr>
+            <td>@news.Id</td>
+            <td>@news.Title</td>
+            <td>@news.Text</td>
+            <td>@news.AuthorName</td>
+            <td>@news.IsFake</td>
+        </tr>
+    }
+</table>
+}
