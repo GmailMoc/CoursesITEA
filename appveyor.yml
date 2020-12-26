@@ -1,0 +1,22 @@
+version: 1.0.{build}
+configuration: Release
+cache: 
+    - packages -> **\packages.config
+environment:
+    matrix:
+    - solution_folder: homework1/inprodaction
+      full_project_name: homework1/inprodaction/inprodaction/inprodaction.csproj
+
+    - solution_folder: homework2/WebApp_HW2_Empty
+      full_project_name: homework2/WebApp_HW2_Empty/WebApp_HW2_Empty/WebApp_HW2_Empty.csproj
+
+    - solution_folder: homework3/WebApp_HR3_MVC
+      full_project_name: homework3/WebApp_HR3_MVC/WebApp_HR3_MVC/WebApp_HR3_MVC.csproj
+
+    - solution_folder: homework4/WebApp_HW4_MVC_db
+      full_project_name: homework4/WebApp_HW4_MVC_db/WebApp_HW4_MVC_db/WebApp_HW4_MVC_db.csproj
+
+before_build: nuget restore %solution_folder%
+build: 
+    project: '%full_project_name%'
+    publish_wap: true
