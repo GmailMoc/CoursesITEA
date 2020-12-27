@@ -16,6 +16,9 @@ environment:
     - solution_folder: homework4/WebApp_HW4_MVC_db
       full_project_name: homework4/WebApp_HW4_MVC_db/WebApp_HW4_MVC_db/WebApp_HW4_MVC_db.csproj
 
+    - solution_folder: homework5/WebApp_HW5_MVC_db
+      full_project_name: homework5/WebApp_HW5_MVC_db/WebApp_HW5_MVC_db/WebApp_HW5_MVC_db.csproj
+
 before_build: nuget restore %solution_folder%
 build: 
     project: '%full_project_name%'
