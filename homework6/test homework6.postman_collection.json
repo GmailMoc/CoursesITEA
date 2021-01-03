@@ -1,0 +1,191 @@
+{
+	"info": {
+		"_postman_id": "4478269f-a4eb-40c1-af61-63e3dbfb7d08",
+		"name": "test homework6",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:56090/v1/news?filterId=2&filterAuthor=Svetlana Sokolova&filterFake=true",
+			"protocolProfileBehavior": {
+				"followOriginalHttpMethod": true,
+				"followAuthorizationHeader": true,
+				"removeRefererHeaderOnRedirect": true,
+				"tlsPreferServerCiphers": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:56090/v1/news?filterId=2&filterAuthor=Svetlana Sokolova&filterFake=true",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "56090",
+					"path": [
+						"v1",
+						"news"
+					],
+					"query": [
+						{
+							"key": "filterId",
+							"value": "2"
+						},
+						{
+							"key": "filterAuthor",
+							"value": "Svetlana Sokolova"
+						},
+						{
+							"key": "filterFake",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:56090/v1/news",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": 4,\r\n        \"title\": \"A species were discovered in Africa: it is blue legless cat\",\r\n        \"text\": \"\",\r\n        \"authorName\": \"Test Test\",\r\n        \"isFake\": true\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:56090/v1/news",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "56090",
+					"path": [
+						"v1",
+						"news"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:56090/v1/news",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": 5,\r\n        \"title\": \"Increase your lifespan by 1000 years, every morning you need...\",\r\n        \"text\": \"\",\r\n        \"authorName\": \"Svetlana Sokolova2\",\r\n        \"isFake\": true\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:56090/v1/news",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "56090",
+					"path": [
+						"v1",
+						"news"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:56090/v1/news",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "newsId",
+						"value": "50",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:56090/v1/news",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "56090",
+					"path": [
+						"v1",
+						"news"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:56090/v1/news/1",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  {\r\n    \"op\": \"replace\",\r\n    \"path\": \"/Text\",\r\n    \"value\": \"Test Text\"\r\n  },\r\n  {\r\n    \"op\": \"replace\",\r\n    \"path\": \"/authorName\",\r\n    \"value\": \"Samuel Eto'o\"\r\n  }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:56090/v1/news/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "56090",
+					"path": [
+						"v1",
+						"news",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
