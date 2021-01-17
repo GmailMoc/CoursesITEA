@@ -1,0 +1,25 @@
+﻿@model IEnumerable<HumanIndexViewModel>
+@{
+    ViewData["Title"] = "Humans";
+}
+
+<table class="table" style="text-align: center">
+    <tr>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Age</th>
+        <th>CountryName</th>
+    </tr>
+    @foreach (var human in Model)
+    {
+        <tr>
+            <td><a asp-controller="Human" asp-action="Index" asp-route-humanId="@human.Id">@human.FirstName</a></td>
+            <td>@human.LastName</td>
+            <td>@human.Age</td>
+            <td><a asp-controller="Country" asp-action="Index" asp-route-countryId="@human.CountryId">@human.CountryName</a></td>
+        </tr>
+    }
+</table>
+<span class="overflow-auto">
+        <a asp-controller="Human" asp-action="Create">Create New Human</a>
+</span>

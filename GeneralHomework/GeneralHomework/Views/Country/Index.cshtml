@@ -1,0 +1,25 @@
+﻿@model IEnumerable<CountryIndexViewModel>
+@{
+    ViewData["Title"] = "Humans";
+}
+
+<table class="table" style="text-align: center">
+    <tr>
+        <th>CountryName</th>
+        <th>SickCount</th>
+        <th>DeadCount</th>
+        <th>RecoveredCount</th>
+    </tr>
+    @foreach (var country in Model)
+    {
+        <tr>
+            <td><a asp-controller="Country" asp-action="Index" asp-route-countryId="@country.Id">@country.NameCountry</a></td>
+            <td>@country.SickCount</td>
+            <td>@country.DeadCount</td>
+            <td>@country.RecoveredCount</td>
+        </tr>
+    }
+</table>
+<span class="overflow-auto">
+        <a asp-controller="Country" asp-action="Create">Create New Country</a>
+</span>

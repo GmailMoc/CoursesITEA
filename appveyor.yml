@@ -4,23 +4,8 @@ cache:
     - packages -> **\packages.config
 environment:
     matrix:
-    - solution_folder: homework1/inprodaction
-      full_project_name: homework1/inprodaction/inprodaction/inprodaction.csproj
-
-    - solution_folder: homework2/WebApp_HW2_Empty
-      full_project_name: homework2/WebApp_HW2_Empty/WebApp_HW2_Empty/WebApp_HW2_Empty.csproj
-
-    - solution_folder: homework3/WebApp_HR3_MVC
-      full_project_name: homework3/WebApp_HR3_MVC/WebApp_HR3_MVC/WebApp_HR3_MVC.csproj
-
-    - solution_folder: homework4/WebApp_HW4_MVC_db
-      full_project_name: homework4/WebApp_HW4_MVC_db/WebApp_HW4_MVC_db/WebApp_HW4_MVC_db.csproj
-
-    - solution_folder: homework5/WebApp_HW5_MVC_db
-      full_project_name: homework5/WebApp_HW5_MVC_db/WebApp_HW5_MVC_db/WebApp_HW5_MVC_db.csproj
-
-    - solution_folder: homework6/WebApi_HW6
-      full_project_name: homework6/WebApi_HW6/WebApi_HW6.csproj
+    - solution_folder: GeneralHomework
+      full_project_name: GeneralHomework/GeneralHomework/GeneralHomework.csproj
 
 before_build: nuget restore %solution_folder%
 build: 
