@@ -3,6 +3,7 @@ using GeneralHomework.Models.Repositories;
 using GeneralHomework.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -51,14 +52,21 @@ namespace GeneralHomework.Controllers
         [HttpGet]
         public IActionResult Create()
         {
+            SelectList countries = new SelectList(_countryRepository.GetAllCountries(), "Id", "Name");
+            ViewBag.Countries = countries;
+
             return View();
         }
 
         [HttpPost]
         public IActionResult Create(Human human)
         {
-            _humanRepository.AddHuman(human);
-            return View();
+            if (ModelState.IsValid)
+            {
+                _humanRepository.AddHuman(human);
+            }
+
+            return RedirectToRoute(new { controller = "Human", action = "Index" });
         }
 
         public IActionResult Delete(int humanId)
@@ -72,7 +80,7 @@ namespace GeneralHomework.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
 
-            return View();
+            return RedirectToRoute(new { controller = "Human", action = "Index" });
         }
     }
 }

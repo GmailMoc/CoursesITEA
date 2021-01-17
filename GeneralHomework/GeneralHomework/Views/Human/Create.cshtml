@@ -1,25 +1,30 @@
 ﻿@model Human
 <form asp-controller="Human" asp-action="Create" method="post">
-    @*<label asp-for="Id"></label><br>
-        <input asp-for="Id" type="number" /><br>*@
+    <div asp-validation-summary="All"></div>
 
+    <span style="color:red" asp-validation-for="FirstName"></span><br>
     <label asp-for="FirstName"></label><br>
     <input asp-for="FirstName" type="text" /><br>
 
+    <span style="color:red" asp-validation-for="LastName"></span><br>
     <label asp-for="LastName"></label><br>
     <input asp-for="LastName" type="text" /><br>
 
+    <span style="color:red" asp-validation-for="Age"></span><br>
     <label asp-for="Age"></label><br>
     <input asp-for="Age" type="number" /><br>
 
+    <span style="color:red" asp-validation-for="IsSick"></span><br>
     <label asp-for="IsSick"></label><br>
     <input asp-for="IsSick" type="checkbox" /><br>
 
+    <span style="color:red" asp-validation-for="Gender"></span><br>
     <label asp-for="Gender"></label><br>
-    <input asp-for="Gender" type="text" /><br>
+    <select asp-for="Gender" asp-items="Html.GetEnumSelectList<Gender>()" type="text"></select><br>
 
+    <span style="color:red" asp-validation-for="CountryId"></span><br>
     <label asp-for="CountryId"></label><br>
-    <input asp-for="CountryId" type="number" /><br>
+    <select asp-for="CountryId" asp-items="ViewBag.Countries"></select><br>
 
-    <button type="submit">Create human</button>
+    <br><button type="submit">Create human</button>
 </form>
