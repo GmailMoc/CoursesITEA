@@ -1,6 +1,7 @@
 ﻿using GeneralHomework.Models;
 using GeneralHomework.Models.Repositories;
 using GeneralHomework.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,7 @@ namespace GeneralHomework.Controllers
             _countryRepository = countryRepository;
         }
 
+        [AllowAnonymous]
         public IActionResult Index(int? countryId)
         {
             IEnumerable<Country> countries = _countryRepository.GetAllCountries();

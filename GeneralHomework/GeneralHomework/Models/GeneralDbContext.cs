@@ -9,17 +9,23 @@ namespace GeneralHomework.Models
         public DbSet<Country> Countries { get; set; }
         public DbSet<Human> Humans { get; set; }
 
-        private IConfiguration _configuration { get; }
+        //private IConfiguration _configuration { get; }
 
 
-        public GeneralDbContext(IConfiguration configuration)
+        //public GeneralDbContext(IConfiguration configuration)
+        //{
+        //    _configuration = configuration;
+        //}
+
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseSqlServer(_configuration.GetConnectionString("GeneralDbConnection")).UseLazyLoadingProxies();
+        //}
+
+        public GeneralDbContext(DbContextOptions<GeneralDbContext> options)
+        : base(options)
         {
-            _configuration = configuration;
-        }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(_configuration.GetConnectionString("GeneralDbConnection")).UseLazyLoadingProxies();
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -1,6 +1,7 @@
 ﻿using GeneralHomework.Models;
 using GeneralHomework.Models.Repositories;
 using GeneralHomework.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -20,6 +21,7 @@ namespace GeneralHomework.Controllers
             _countryRepository = countryRepository;
         }
 
+        [AllowAnonymous]
         public IActionResult Index(int? humanId)
         {
             //соединяем с помощью Join, чтобы не делать несколько запросов к БД одновременно.

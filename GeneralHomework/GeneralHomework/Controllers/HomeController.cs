@@ -1,13 +1,11 @@
 ﻿using GeneralHomework.Models;
 using GeneralHomework.Models.Repositories;
 using GeneralHomework.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace GeneralHomework.Controllers
 {
@@ -26,11 +24,13 @@ namespace GeneralHomework.Controllers
             _countryRepository = countryRepository;
         }
 
+        [AllowAnonymous]
         public IActionResult Index()
         {
             return View();
         }
 
+        [AllowAnonymous]
         public IActionResult Info()
         {
             IEnumerable<Human> humans = _humanRepository.GetAllHumans();
@@ -38,11 +38,13 @@ namespace GeneralHomework.Controllers
             return View(new HomeInfoViewModel { Humans = humans, Countries = countries });
         }
 
+        [AllowAnonymous]
         public IActionResult Privacy()
         {
             return View();
         }
 
+        [AllowAnonymous]
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

@@ -1,0 +1,22 @@
+﻿@inject IHttpContextAccessor accessor
+@model AccountLoginViewModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<form asp-controller="Account" asp-action="Login" asp-route-returnurl="@accessor.HttpContext.Request.Query["ReturnUrl"].ToString()" method="post">
+    <div class="" asp-validation-summary="All" class="text-danger"></div>
+
+    <span asp-validation-for="UserName" class="text-danger"></span>
+    <label asp-for="UserName"></label><br>
+    <input asp-for="UserName" type="text" /><br>
+
+    <span asp-validation-for="Password" class="text-danger"></span>
+    <label asp-for="Password"></label><br>
+    <input asp-for="Password" type="password" /><br>
+
+    <label asp-for="RememberMe"></label><br>
+    <input asp-for="RememberMe" type="checkbox" /><br>
+
+    <button type="submit">Login</button>
+</form>
