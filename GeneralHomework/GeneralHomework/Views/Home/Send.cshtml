@@ -1,0 +1,25 @@
+﻿@model HomeSendViewModel
+@{
+    ViewData["Title"] = "SendMessage";
+}
+
+<form asp-controller="Home" asp-action="Send" method="post">
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <span asp-validation-for="EmailOrPhone" class="text-danger"></span>
+    <label asp-for="EmailOrPhone">Destination</label><br>
+    <input asp-for="EmailOrPhone" type="text" /><br>
+
+    <span asp-validation-for="MessageText" class="text-danger"></span>
+    <label asp-for="MessageText"></label><br>
+    <input asp-for="MessageText" type="text" /><br>
+
+    <label asp-for="MailingType"></label><br>
+    <label>Sms:</label>
+    <input type="radio" name="MailingType" value="sms" checked />
+    <label>Email:</label>
+    <input type="radio" name="MailingType" value="email" /><br>
+
+    <button type="submit">Send</button>
+</form>

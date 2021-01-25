@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\Learning\\!C#\\CoursesITEA\\GeneralHomework\\GeneralHomework\\GeneralHomework.csproj": {}
+    "D:\\Learning\\!C#\\CoursesITEA\\GeneralHomework\\GeneralHomework\\GeneralHomework.csproj": {}
   },
   "projects": {
-    "d:\\Learning\\!C#\\CoursesITEA\\GeneralHomework\\GeneralHomework\\GeneralHomework.csproj": {
+    "D:\\Learning\\!C#\\CoursesITEA\\GeneralHomework\\GeneralHomework\\GeneralHomework.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\Learning\\!C#\\CoursesITEA\\GeneralHomework\\GeneralHomework\\GeneralHomework.csproj",
+        "projectUniqueName": "D:\\Learning\\!C#\\CoursesITEA\\GeneralHomework\\GeneralHomework\\GeneralHomework.csproj",
         "projectName": "GeneralHomework",
-        "projectPath": "d:\\Learning\\!C#\\CoursesITEA\\GeneralHomework\\GeneralHomework\\GeneralHomework.csproj",
+        "projectPath": "D:\\Learning\\!C#\\CoursesITEA\\GeneralHomework\\GeneralHomework\\GeneralHomework.csproj",
         "packagesPath": "C:\\Users\\123456\\.nuget\\packages\\",
-        "outputPath": "d:\\Learning\\!C#\\CoursesITEA\\GeneralHomework\\GeneralHomework\\obj\\",
+        "outputPath": "D:\\Learning\\!C#\\CoursesITEA\\GeneralHomework\\GeneralHomework\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -43,6 +43,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "MailKit": {
+              "target": "Package",
+              "version": "[2.10.1, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.2, )"
@@ -60,6 +64,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.2, )"
+            },
+            "Twilio": {
+              "target": "Package",
+              "version": "[5.53.0, )"
             }
           },
           "imports": [

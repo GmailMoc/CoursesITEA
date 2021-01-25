@@ -1,9 +1,10 @@
+using GeneralHomework.Configurations;
 using GeneralHomework.Models;
 using GeneralHomework.Models.Repositories;
+using GeneralHomework.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
@@ -34,6 +35,7 @@ namespace GeneralHomework
 
             services.AddScoped<IHumanRepository, HumanRepository>();
             services.AddScoped<ICountryRepository, CountryRepository>();
+            services.AddScoped<MessageSenderFactory>();
 
             services.AddDbContext<GeneralDbContext>(options =>
             {
@@ -49,6 +51,9 @@ namespace GeneralHomework
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireUppercase = false;
             });
+
+            services.Configure<GeneralAppConfiguration.Email>(_configuration.GetSection("GeneralHomework:Email"));
+            services.Configure<GeneralAppConfiguration.Sms>(_configuration.GetSection("GeneralHomework:Sms"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -64,24 +69,22 @@ namespace GeneralHomework
             }
             app.UseStaticFiles();
 
-            app.Use(request => async context =>
-            {
-                Console.WriteLine($"Endpoint 1: {context.GetEndpoint()?.DisplayName ?? "null"}");
-                await request(context);
-                Console.WriteLine($"Endpoint 1 back: {context.GetEndpoint()?.DisplayName ?? "null"}");
-            });
-
             app.UseRouting();
-
-            app.Use(request => async context =>
-            {
-                Console.WriteLine($"Endpoint 2: {context.GetEndpoint()?.DisplayName ?? "null"}");
-                await request(context);
-                Console.WriteLine($"Endpoint 2 back: {context.GetEndpoint()?.DisplayName ?? "null"}");
-            });
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            //app.Use(async (context, next) =>
+            //{
+            //    Console.WriteLine("Before");
+            //});
+
+            //app.Map("/Account", AccountHandling);
+
+            //app.Run(async context =>
+            //{
+            //    Console.WriteLine("Run middleware");
+            //});
 
             app.UseEndpoints(endpoints =>
             {
@@ -90,5 +93,15 @@ namespace GeneralHomework
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
+
+        //private void AccountHandling(IApplicationBuilder app)
+        //{
+        //    //Console.WriteLine("Map is working");
+
+        //    app.Run(async context =>
+        //    {
+        //        Console.WriteLine("Map is working");
+        //    });
+        //}
     }
 }
