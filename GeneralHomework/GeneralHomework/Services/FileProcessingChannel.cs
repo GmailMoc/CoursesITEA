@@ -16,14 +16,19 @@ namespace GeneralHomework.Services
 
         public async Task SetAsync(IFormFile file)
         {
-            await _channel.Writer.WriteAsync(file);
+             await _channel.Writer.WriteAsync(file);
         }
 
-        public IFormFile Get()
+        private IFormFile Get()
         {
             IFormFile file;
             _channel.Reader.TryRead(out file);
             return file;
+        }
+
+        public async Task<IFormFile> GetAsync()
+        {
+            return await Task.Run(()=>Get());
         }
 
         public IAsyncEnumerable<IFormFile> GetAllAsync()

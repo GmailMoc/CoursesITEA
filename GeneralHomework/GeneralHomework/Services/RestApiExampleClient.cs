@@ -4,6 +4,7 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace GeneralHomework.Services
 {
@@ -19,21 +20,28 @@ namespace GeneralHomework.Services
             return content;
         }
 
-        public void UploadFile([MaybeNull] IFormFile file)
+        public void UploadFile(IFormFile file)
         {
             if (file == null)
                 return;
 
-            RestClient client = new RestClient("http://localhost:56090");
-            RestRequest request = new RestRequest("File", Method.POST);
+            var client = new RestClient("http://localhost:56090");
+            var request = new RestRequest("File", Method.POST);
             using (var stream = new MemoryStream())
             {
-                file.CopyTo(stream);
+                try
+                {
+                    file.CopyTo(stream);
+                }
+                catch (Exception e)
+                {
+                    var message = e.Message;
+                }
                 request.AddJsonBody(Convert.ToBase64String(stream.ToArray()));
-            }
 
-            request.AddQueryParameter("fileName", file.FileName);
-            IRestResponse response = client.Execute(request);
+                request.AddQueryParameter("fileName", file.FileName);
+                client.Execute(request);
+            }
         }
     }
 }

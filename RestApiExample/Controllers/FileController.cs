@@ -27,8 +27,8 @@ namespace BasicInfo.Controllers
         [HttpPost("File")]
         public void UploadFile([FromBody]string file, [FromQuery]string fileName, [FromServices]IWebHostEnvironment webHost)
         {
-            var filePath = Path.Combine(webHost.WebRootPath, fileName);
-            var fileContent = Convert.FromBase64String(file);
+            string filePath = Path.Combine(webHost.WebRootPath, fileName);
+            byte[] fileContent = Convert.FromBase64String(file);
             System.IO.File.WriteAllBytes(filePath, fileContent);
         }
     }

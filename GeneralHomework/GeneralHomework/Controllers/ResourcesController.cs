@@ -44,14 +44,11 @@ namespace GeneralHomework.Controllers
         }
 
         [HttpPost]
-        public IActionResult Upload(ResourceUploadViewModel viewModel)
+        public async Task<IActionResult> Upload(ResourceUploadViewModel viewModel)
         {
-            MemoryCacheEntryOptions entryOptions = new MemoryCacheEntryOptions();
-            entryOptions.AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(2);
-
             if (viewModel.File?.Length > 0)
             {
-                _channel.SetAsync(viewModel.File);
+                await _channel.SetAsync(viewModel.File);
                 viewModel.File = null;
                 viewModel.UploadStage = UploadStage.Comleted;
             }

@@ -1,4 +1,5 @@
 ﻿using GeneralHomework.Configurations;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using System;
@@ -9,13 +10,15 @@ namespace GeneralHomework.Services
 {
     public class LoadFileHostedService : BackgroundService
     {
-        private readonly IRestApiExampleClient _restClient;
+        //private readonly IRestApiExampleClient _restClient;
+        private readonly IServiceProvider _sp;
         private readonly ILoadFile _loadFile;
         private readonly GeneralAppConfiguration.LoadFile _configuration;
 
-        public LoadFileHostedService(IRestApiExampleClient restClient, ILoadFile loadFile, IOptions<GeneralAppConfiguration.LoadFile> options)
+        public LoadFileHostedService(/*IRestApiExampleClient restClient, */ILoadFile loadFile, IOptions<GeneralAppConfiguration.LoadFile> options, IServiceProvider sp)
         {
-            _restClient = restClient;
+            //_restClient = restClient;
+            _sp = sp;
             _loadFile = loadFile;
             _configuration = options.Value;
         }
@@ -29,7 +32,11 @@ namespace GeneralHomework.Services
 
                 if (image == null)
                 {
-                    image = _restClient.GetFile(imageName);
+                    using (var scope = _sp.CreateScope())
+                    {
+                        var service = scope.ServiceProvider.GetRequiredService<IRestApiExampleClient>();
+                        image = service.GetFile(imageName);
+                    }
                     _loadFile.CacheSet(image, imageName);
                 }
 

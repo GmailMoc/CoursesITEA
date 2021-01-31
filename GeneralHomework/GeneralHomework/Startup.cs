@@ -11,7 +11,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
 
 namespace GeneralHomework
 {
@@ -36,7 +35,9 @@ namespace GeneralHomework
             services.AddScoped<IHumanRepository, HumanRepository>();
             services.AddScoped<ICountryRepository, CountryRepository>();
             services.AddScoped<MessageSenderFactory>();
-            services.AddSingleton<IRestApiExampleClient, RestApiExampleClient>();
+
+            //services.AddSingleton<IRestApiExampleClient, RestApiExampleClient>();
+            services.AddScoped<IRestApiExampleClient, RestApiExampleClient>();
             services.AddSingleton<ILoadFile, LoadFile>();
             services.AddSingleton<FileProcessingChannel>();
 
@@ -64,11 +65,6 @@ namespace GeneralHomework
             services.Configure<GeneralAppConfiguration.Email>(_configuration.GetSection("GeneralHomework:Email"));
             services.Configure<GeneralAppConfiguration.Sms>(_configuration.GetSection("GeneralHomework:Sms"));
             services.Configure<GeneralAppConfiguration.LoadFile>(_configuration.GetSection("LoadFile"));
-
-            services.Configure<IISServerOptions>(options =>
-            {
-                options.MaxRequestBodySize = int.MaxValue;
-            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

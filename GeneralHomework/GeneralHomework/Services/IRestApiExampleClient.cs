@@ -1,9 +1,12 @@
 ﻿using Microsoft.AspNetCore.Http;
+using System.Diagnostics.CodeAnalysis;
+using System.Threading.Tasks;
+
 namespace GeneralHomework.Services
 {
     public interface IRestApiExampleClient
     {
         public byte[] GetFile(string imageName);
-        public void UploadFile(IFormFile file);
+        public void UploadFile([NotNull]IFormFile file);
     }
 }
