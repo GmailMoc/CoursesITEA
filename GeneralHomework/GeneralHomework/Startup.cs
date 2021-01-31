@@ -36,6 +36,15 @@ namespace GeneralHomework
             services.AddScoped<IHumanRepository, HumanRepository>();
             services.AddScoped<ICountryRepository, CountryRepository>();
             services.AddScoped<MessageSenderFactory>();
+            services.AddSingleton<IRestApiExampleClient, RestApiExampleClient>();
+            services.AddSingleton<ILoadFile, LoadFile>();
+            services.AddSingleton<FileProcessingChannel>();
+
+            services.AddMemoryCache();
+
+            services.AddHostedService<LoadFileHostedService>();
+            services.AddHostedService<UploadFileHostedService>();
+
 
             services.AddDbContext<GeneralDbContext>(options =>
             {
@@ -54,6 +63,12 @@ namespace GeneralHomework
 
             services.Configure<GeneralAppConfiguration.Email>(_configuration.GetSection("GeneralHomework:Email"));
             services.Configure<GeneralAppConfiguration.Sms>(_configuration.GetSection("GeneralHomework:Sms"));
+            services.Configure<GeneralAppConfiguration.LoadFile>(_configuration.GetSection("LoadFile"));
+
+            services.Configure<IISServerOptions>(options =>
+            {
+                options.MaxRequestBodySize = int.MaxValue;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -74,6 +89,7 @@ namespace GeneralHomework
             app.UseAuthentication();
             app.UseAuthorization();
 
+            app.UseMiddleware<WriteToConsoleMiddleware>("test string");
             //app.Use(async (context, next) =>
             //{
             //    Console.WriteLine("Before");

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7flo852I6TJO5p4CvFmwTCbPpZ40eVrGrO+hJ2zr7urhUj2JUYKEKzuBAi1zIkAZJf1k9QK24y9NNbyAWAlSMQ==",
+  "dgSpecHash": "367En99VgSwSfh4p0WE/9ka+RNrUqvQc9DeOiFMR3mYJ6iDXtOCB3b2ASdtkDWfNFSC4Q8P294nj8Syof+BPJA==",
   "success": true,
-  "projectFilePath": "D:\\Learning\\!C#\\CoursesITEA\\GeneralHomework\\GeneralHomework\\GeneralHomework.csproj",
+  "projectFilePath": "d:\\Learning\\!C#\\CoursesITEA\\GeneralHomework\\GeneralHomework\\GeneralHomework.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\123456\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\123456\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
@@ -47,6 +47,7 @@
     "C:\\Users\\123456\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
     "C:\\Users\\123456\\.nuget\\packages\\portable.bouncycastle\\1.8.8\\portable.bouncycastle.1.8.8.nupkg.sha512",
+    "C:\\Users\\123456\\.nuget\\packages\\restsharp\\106.11.7\\restsharp.106.11.7.nupkg.sha512",
     "C:\\Users\\123456\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\123456\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\123456\\.nuget\\packages\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",

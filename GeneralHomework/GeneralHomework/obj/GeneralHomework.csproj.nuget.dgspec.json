@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Learning\\!C#\\CoursesITEA\\GeneralHomework\\GeneralHomework\\GeneralHomework.csproj": {}
+    "d:\\Learning\\!C#\\CoursesITEA\\GeneralHomework\\GeneralHomework\\GeneralHomework.csproj": {}
   },
   "projects": {
-    "D:\\Learning\\!C#\\CoursesITEA\\GeneralHomework\\GeneralHomework\\GeneralHomework.csproj": {
+    "d:\\Learning\\!C#\\CoursesITEA\\GeneralHomework\\GeneralHomework\\GeneralHomework.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Learning\\!C#\\CoursesITEA\\GeneralHomework\\GeneralHomework\\GeneralHomework.csproj",
+        "projectUniqueName": "d:\\Learning\\!C#\\CoursesITEA\\GeneralHomework\\GeneralHomework\\GeneralHomework.csproj",
         "projectName": "GeneralHomework",
-        "projectPath": "D:\\Learning\\!C#\\CoursesITEA\\GeneralHomework\\GeneralHomework\\GeneralHomework.csproj",
+        "projectPath": "d:\\Learning\\!C#\\CoursesITEA\\GeneralHomework\\GeneralHomework\\GeneralHomework.csproj",
         "packagesPath": "C:\\Users\\123456\\.nuget\\packages\\",
-        "outputPath": "D:\\Learning\\!C#\\CoursesITEA\\GeneralHomework\\GeneralHomework\\obj\\",
+        "outputPath": "d:\\Learning\\!C#\\CoursesITEA\\GeneralHomework\\GeneralHomework\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -64,6 +64,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.2, )"
+            },
+            "RestSharp": {
+              "target": "Package",
+              "version": "[106.11.7, )"
             },
             "Twilio": {
               "target": "Package",

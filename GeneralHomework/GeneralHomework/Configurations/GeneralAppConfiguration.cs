@@ -18,5 +18,11 @@ namespace GeneralHomework.Configurations
             public string TwilioAuthToken { get; set; }
             public string TwilioNumber { get; set; }
         }        
+
+        public class LoadFile
+        {
+            public int DelayFromMinutes { get; set; }
+            public int CacheStorageTime { get; set; }
+        }
     }
 }
