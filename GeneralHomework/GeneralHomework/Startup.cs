@@ -34,7 +34,7 @@ namespace GeneralHomework
 
             services.AddScoped<IHumanRepository, HumanRepository>();
             services.AddScoped<ICountryRepository, CountryRepository>();
-            services.AddScoped<MessageSenderFactory>();
+            services.AddScoped<IMessageSenderFactory, MessageSenderFactory>();
 
             //services.AddSingleton<IRestApiExampleClient, RestApiExampleClient>();
             services.AddScoped<IRestApiExampleClient, RestApiExampleClient>();

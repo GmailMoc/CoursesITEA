@@ -12,17 +12,17 @@ namespace GeneralHomework.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        //private readonly ILogger<HomeController> _logger;
         private readonly IHumanRepository _humanRepository;
         private readonly ICountryRepository _countryRepository;
-        private readonly MessageSenderFactory _messageSenderFactory;
+        private readonly IMessageSenderFactory _messageSenderFactory;
 
-        public HomeController(ILogger<HomeController> logger,
+        public HomeController(//ILogger<HomeController> logger,
             IHumanRepository humanRepository,
             ICountryRepository countryRepository,
-            MessageSenderFactory messageSenderFactory)
+            IMessageSenderFactory messageSenderFactory)
         {
-            _logger = logger;
+            //_logger = logger;
             _humanRepository = humanRepository;
             _countryRepository = countryRepository;
             _messageSenderFactory = messageSenderFactory;

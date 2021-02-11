@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GeneralHomework.Services
 {
-    public class MessageSenderFactory
+    public class MessageSenderFactory : IMessageSenderFactory
     {
         private readonly IOptions<GeneralAppConfiguration.Email> _emailConfig;
         private readonly IOptions<GeneralAppConfiguration.Sms> _smsConfig;
