@@ -7,6 +7,6 @@ namespace GeneralHomework.Services
     public interface IRestApiExampleClient
     {
         public byte[] GetFile(string imageName);
-        public void UploadFile([NotNull]IFormFile file);
+        public void UploadFile([NotNull]string fileName, byte[] fileByte);
     }
 }

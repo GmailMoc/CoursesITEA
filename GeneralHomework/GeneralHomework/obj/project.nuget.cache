@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "367En99VgSwSfh4p0WE/9ka+RNrUqvQc9DeOiFMR3mYJ6iDXtOCB3b2ASdtkDWfNFSC4Q8P294nj8Syof+BPJA==",
+  "dgSpecHash": "vAKdkUF5iAp93P1YnW/DPfZdyMKWVbjXucuTa7EXkMyt/WmpGmjtjV3xDXjIEOLJg63TX0JLp2COdYPCcmb5kg==",
   "success": true,
-  "projectFilePath": "d:\\Learning\\!C#\\CoursesITEA\\GeneralHomework\\GeneralHomework\\GeneralHomework.csproj",
+  "projectFilePath": "D:\\Learning\\!C#\\CoursesITEA\\GeneralHomework\\GeneralHomework\\GeneralHomework.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\123456\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\123456\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

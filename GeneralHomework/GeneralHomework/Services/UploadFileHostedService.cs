@@ -29,14 +29,14 @@ namespace GeneralHomework.Services
                 {
                     _restClient.UploadFile(image);
                 }*/
-                await foreach (IFormFile image in _channel.GetAllAsync())
+                await foreach ((string imageName, byte[] imageByte) image in _channel.GetAllAsync())
                 {
-                    if (image != null)
+                    if (image.imageName != null && image.imageByte != null)
                     {
                         using (var scope = _sp.CreateScope())
                         {
                             var service = scope.ServiceProvider.GetRequiredService<IRestApiExampleClient>();
-                            service.UploadFile(image);
+                            service.UploadFile(image.imageName, image.imageByte);
                         }
                     }
                 }
