@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "6vyxBysBjh0Via5KA7OG2+iLCxGtRIx/Xyz7KSnjiHQiWRiVNNFo+b7S7oZq7zTDFrH0D+kG4Nceer5uDOeM1g==",
+  "success": true,
+  "projectFilePath": "D:\\Learning\\!C#\\CoursesITEA\\TestApiFootball\\TestApiFootball\\TestApiFootball.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\123456\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

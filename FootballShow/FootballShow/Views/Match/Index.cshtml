@@ -1,0 +1,11 @@
+﻿@model IEnumerable<MatchIndexViewModel>
+@{
+    ViewData["Title"] = "Teams";
+}
+<h3>@ViewBag.Team</h3>
+<ul>
+    @foreach (var match in Model)
+    {
+        <li>@($"{match.HomeTeam}\t{match.HomeTeamGoals} - {match.AwayTeamGoals}\t{match.AwayTeam}\tDate: {match.LocalDate}")</li>
+    }
+</ul>

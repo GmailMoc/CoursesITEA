@@ -1,0 +1,22 @@
+﻿@model IEnumerable<TeamIndexViewModel>
+@{
+    ViewData["Title"] = "Teams";
+}
+<h3>@ViewBag.League</h3>
+<table class="table" style="text-align: center">
+    <tr>
+        <th>TeamName</th>
+        <th>WebSite</th>
+        <th>Arena</th>
+        <th>League</th>
+    </tr>
+    @foreach (var team in Model)
+    {
+        <tr>
+            <td><a asp-controller="Match" asp-action="Index" asp-route-teamId="@team.Id">@team.Name</a></td>
+            <td><a href = @team.WebSite target="_blank">WebSite Team</a></td>
+            <td>@team.Arena</td>
+            <td>@team.League</td>
+        </tr>
+    }
+</table>
