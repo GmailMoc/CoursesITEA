@@ -21,14 +21,17 @@ namespace FootballShow.Models
             base.OnModelCreating(modelBuilder); // для того, чтобы не заполнять данными снова
 
             modelBuilder.Entity<League>().HasData(
-                new League { Id = 2002, Name = "Bundesliga", Country = "Germany", EmblemUrl = "" },
-                new League { Id = 2021, Name = "Premier League", Country = "England", EmblemUrl = "" });
+                new League { Id = 2002, Name = "Bundesliga", Country = "Germany", EmblemUrl = "https://cdn.worldvectorlogo.com/logos/bundesliga-2.svg" },
+                new League { Id = 2019, Name = "Serie A", Country = "Italy", EmblemUrl = "https://crests.football-data.org/SA.svg" },
+                new League { Id = 2021, Name = "Premier League", Country = "England", EmblemUrl = "https://upload.wikimedia.org/wikipedia/ru/f/f2/Premier_League_Logo.svg" });
 
             modelBuilder.Entity<Team>().HasData(
                 new Team { Id = 1, Name = "1. FC Koln", Arena = "RheinEnergieSTADION", WebSite = "http://www.fc-koeln.de", LeagueId = 2002 },
                 new Team { Id = 5, Name = "FC Bayern Munchen", Arena = "Allianz Arena", WebSite = "http://www.fcbayern.de", LeagueId = 2002 },
                 new Team { Id = 57, Name = "Arsenal FC", Arena = "Emirates Stadium", WebSite = "http://www.arsenal.com", LeagueId = 2021 },
-                new Team { Id = 61, Name = "Chelsea FC", Arena = "Stamford Bridge", WebSite = "http://www.chelseafc.com", LeagueId = 2021 });
+                new Team { Id = 61, Name = "Chelsea FC", Arena = "Stamford Bridge", WebSite = "http://www.chelseafc.com", LeagueId = 2021 },
+                new Team { Id = 98, Name = "AC Milan", Arena = "Stadio Giuseppe Meazza", WebSite = "http://www.acmilan.com", LeagueId = 2019 },
+                new Team { Id = 109, Name = "Juventus FC", Arena = "Allianz Stadium", WebSite = "http://www.juventus.com", LeagueId = 2019 });
 
             modelBuilder.Entity<Match>().HasData(
                 new Match { Id = 1, HomeTeam = "Eintracht Frankfurt", AwayTeam = "1. FC Koln", HomeTeamGoals = 2, AwayTeamGoals = 0, 

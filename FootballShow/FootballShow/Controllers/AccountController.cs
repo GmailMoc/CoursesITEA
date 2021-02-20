@@ -48,7 +48,9 @@ namespace FootballShow.Controllers
 
                 if (createTask.Result.Succeeded)
                 {
-                    _messageSender.SendMessage(email: registerViewModel.Email, messageText: "You have been registered on the site FootballShow");
+                    _messageSender.SendMessage(email: registerViewModel.Email, 
+                                               nameTo: registerViewModel.FisrtName, 
+                                               messageText: "You have been registered on the site FootballShow");
                     return RedirectToRoute(new { controller = "Home", action = "Index" });
                 }
 

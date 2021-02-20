@@ -7769,11 +7769,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\Learning\\!C#\\CoursesITEA\\GeneralHomework\\GeneralHomework\\GeneralHomework.csproj",
+      "projectUniqueName": "D:\\Learning\\!C#\\CoursesITEA\\GeneralHomework\\GeneralHomework\\GeneralHomework.csproj",
       "projectName": "GeneralHomework",
-      "projectPath": "d:\\Learning\\!C#\\CoursesITEA\\GeneralHomework\\GeneralHomework\\GeneralHomework.csproj",
+      "projectPath": "D:\\Learning\\!C#\\CoursesITEA\\GeneralHomework\\GeneralHomework\\GeneralHomework.csproj",
       "packagesPath": "C:\\Users\\123456\\.nuget\\packages\\",
-      "outputPath": "d:\\Learning\\!C#\\CoursesITEA\\GeneralHomework\\GeneralHomework\\obj\\",
+      "outputPath": "D:\\Learning\\!C#\\CoursesITEA\\GeneralHomework\\GeneralHomework\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -7854,7 +7854,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }

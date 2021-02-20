@@ -14,7 +14,7 @@ namespace FootballShow.Services
             _configuration = options.Value;
         }
 
-        public void SendMessage(string email, string nameTo = "Andrey", string messageText = "test working")
+        public void SendMessage(string email, string nameTo, string messageText)
         {
             //Add header 
             MimeMessage message = new MimeMessage();

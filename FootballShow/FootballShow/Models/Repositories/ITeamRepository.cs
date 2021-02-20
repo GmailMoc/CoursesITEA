@@ -8,6 +8,6 @@ namespace FootballShow.Models.Repositories
 
         void RemoveTeam(int teamId);
 
-        void AddLeague(Team team);
+        void AddTeam(Team team);
     }
 }

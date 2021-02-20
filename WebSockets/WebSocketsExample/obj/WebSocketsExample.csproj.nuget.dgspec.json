@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\Learning\\!C#\\CoursesITEA\\WebSockets\\WebSocketsExample\\WebSocketsExample.csproj": {}
+    "D:\\Learning\\!C#\\CoursesITEA\\WebSockets\\WebSocketsExample\\WebSocketsExample.csproj": {}
   },
   "projects": {
-    "d:\\Learning\\!C#\\CoursesITEA\\WebSockets\\WebSocketsExample\\WebSocketsExample.csproj": {
+    "D:\\Learning\\!C#\\CoursesITEA\\WebSockets\\WebSocketsExample\\WebSocketsExample.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\Learning\\!C#\\CoursesITEA\\WebSockets\\WebSocketsExample\\WebSocketsExample.csproj",
+        "projectUniqueName": "D:\\Learning\\!C#\\CoursesITEA\\WebSockets\\WebSocketsExample\\WebSocketsExample.csproj",
         "projectName": "WebSocketsExample",
-        "projectPath": "d:\\Learning\\!C#\\CoursesITEA\\WebSockets\\WebSocketsExample\\WebSocketsExample.csproj",
+        "projectPath": "D:\\Learning\\!C#\\CoursesITEA\\WebSockets\\WebSocketsExample\\WebSocketsExample.csproj",
         "packagesPath": "C:\\Users\\123456\\.nuget\\packages\\",
-        "outputPath": "d:\\Learning\\!C#\\CoursesITEA\\WebSockets\\WebSocketsExample\\obj\\",
+        "outputPath": "D:\\Learning\\!C#\\CoursesITEA\\WebSockets\\WebSocketsExample\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -60,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }

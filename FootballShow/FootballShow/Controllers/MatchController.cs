@@ -36,7 +36,7 @@ namespace FootballShow.Controllers
             }
             else
             {
-                ViewBag.Team = matches.First().TeamName;
+                ViewBag.Team = matches.First(match => match.TeamId == teamId).TeamName;
                 return View(matches.Where(match => match.TeamId == teamId));
             }
         }

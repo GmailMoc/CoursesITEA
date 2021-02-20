@@ -12,7 +12,7 @@ namespace FootballShow.Models.Repositories
             _context = context;
         }
         
-        public void AddLeague(Team team)
+        public void AddTeam(Team team)
         {
             _context.Teams.Add(team);
             _context.SaveChanges();

@@ -32,13 +32,18 @@ namespace FootballShow
                 configure.Filters.Add(new AuthorizeFilter(policy));
             });
 
-            services.AddMemoryCache();
+            //services.AddMemoryCache();
 
             services.AddScoped<ILeagueRepository, LeagueRepository>();
             services.AddScoped<ITeamRepository, TeamRepository>();
             services.AddScoped<IMatchRepository, MatchRepository>();
 
             services.AddScoped<IMessageSender, EmailMessageSender>();
+
+            //Также как обновляются матчи можно было бы обновлять инфо и про Лиги, и про Команды, но я подумал что достаточно показать, что я понял в чем смысл
+            services.AddScoped<ILoadMatches, LoadMatches>();
+
+            services.AddHostedService<LoadMatchesHostedService>();
 
             services.AddDbContext<FootballShowDbContext>(options =>
             {
@@ -56,6 +61,7 @@ namespace FootballShow
             });
 
             services.Configure<FootballShowConfiguration.Email>(_configuration.GetSection("FootballShow:Email"));
+            services.Configure<FootballShowConfiguration.LoadMatches>(_configuration.GetSection("LoadMatches"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
